@@ -1,0 +1,30 @@
+<div class="login-box">
+  <div class="logo">
+    <b>Ekklesia</b>
+  </div>
+  <mat-card class='card-login'>
+    <div class="msg">Informe os dados abaixo para acessar</div>
+    <mat-card-content>
+      <form [formGroup]="formLogin" (submit)="autenticar()">
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Login" required formControlName="login">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Senha" type="password" required formControlName="senha">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex fxLayoutAlign="end center">
+            <a mat-button routerLink=".">Esqueceu a senha?</a>
+          </div>
+          <div fxFlex fxLayoutAlign="end center">
+            <button mat-raised-button color="primary">ENTRAR</button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
