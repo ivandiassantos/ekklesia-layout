@@ -4,6 +4,7 @@ import { LoginComponent } from './login.component';
 import { MatCardModule, MatFormFieldModule, MatSnackBarModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { InputTextModule } from '../core/componentes/input-text/input-text.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -16,7 +17,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    InputTextModule
   ]
 })
 export class LoginModule { }

@@ -9,11 +9,23 @@
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <mat-form-field fxFlex>
             <input matInput placeholder="Login" required formControlName="login">
+            <mat-error *ngIf="formLogin.get('login').errors?.required">
+              Campo obrigatório
+            </mat-error>
+            <mat-error *ngIf="formLogin.get('login').errors?.maxlength">
+              Não pode ter mais do que 50 caracteres
+            </mat-error>
           </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <mat-form-field fxFlex>
             <input matInput placeholder="Senha" type="password" required formControlName="senha">
+            <mat-error *ngIf="formLogin.get('senha').errors?.required">
+              Campo obrigatório
+            </mat-error>
+            <mat-error *ngIf="formLogin.get('senha').errors?.maxlength">
+              Não pode ter mais que 30 caracteres
+            </mat-error>
           </mat-form-field>
         </div>
         <div fxLayout="row">
@@ -21,7 +33,7 @@
             <a mat-button routerLink=".">Esqueceu a senha?</a>
           </div>
           <div fxFlex fxLayoutAlign="end center">
-            <button mat-raised-button color="primary">ENTRAR</button>
+              <button type="submit" [disabled]='formLogin.invalid' mat-raised-button color="primary">ENTRAR</button>
           </div>
         </div>
       </form>
