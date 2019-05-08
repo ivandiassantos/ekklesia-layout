@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-funcionalidade-layout',
   templateUrl: './funcionalidade-layout.component.html',
   styleUrls: ['./funcionalidade-layout.component.css']
 })
-export class FuncionalidadeLayoutComponent implements OnInit {
+export class FuncionalidadeLayoutComponent implements OnDestroy {
 
-  constructor() { }
+  mobileQuery: MediaQueryList;
 
-  ngOnInit() {
+  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
+
+  private _mobileQueryListener: () => void;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
 }
