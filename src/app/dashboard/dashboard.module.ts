@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    MatGridListModule, 
     MatCardModule, 
     MatMenuModule, 
     MatIconModule, 
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class DashboardModule { }

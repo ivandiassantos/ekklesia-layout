@@ -29,4 +29,27 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
+
+  .menu-lateral{
+    width: 200px;
+  }
   
+  .conteudo{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .titulo-funcionalidade{
+    margin-top: 20px;
+    margin-bottom: 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }

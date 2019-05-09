@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutModule } from '@angular/cdk/layout';
 import { FuncionalidadeLayoutComponent } from './funcionalidade-layout.component';
 import { RouterModule } from '@angular/router';
-import { MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatMenuModule, MatBadgeModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [FuncionalidadeLayoutComponent],
   imports: [
     CommonModule,
-    LayoutModule,
+    FlexLayoutModule,
     RouterModule,
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatBadgeModule
   ]
 })
 export class FuncionalidadeLayoutModule { }
