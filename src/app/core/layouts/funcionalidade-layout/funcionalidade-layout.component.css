@@ -11,7 +11,7 @@
   .example-is-mobile .example-toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
+    /* z-index: 2; */
   }
   
   h1.example-app-name {
@@ -52,4 +52,9 @@
 
   .example-icon {
     padding: 0 14px;
+  }
+
+  .informacoes-usuario{
+    background-color: #5C6BC0;
+    height: 135px;
   }
