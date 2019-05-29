@@ -8,10 +8,12 @@ import { LoginLayoutModule } from './core/layouts/login-layout/login-layout.modu
 import { LoginModule } from './login/login.module';
 import { FuncionalidadeLayoutModule } from './core/layouts/funcionalidade-layout/funcionalidade-layout.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { SubMenuModule } from './sub-menu/sub-menu.module';
+import { ListaMembrosModule } from './membros/lista/lista-membros.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     LoginLayoutModule,
     LoginModule,
     FuncionalidadeLayoutModule,
-    DashboardModule
+    DashboardModule,
+    SubMenuModule,
+    ListaMembrosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

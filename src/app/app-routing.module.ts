@@ -4,6 +4,8 @@ import { LoginLayoutComponent } from './core/layouts/login-layout/login-layout.c
 import { LoginComponent } from './login/login.component';
 import { FuncionalidadeLayoutComponent } from './core/layouts/funcionalidade-layout/funcionalidade-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SubMenuComponent } from './sub-menu/sub-menu.component';
+import { ListaMembrosComponent } from './membros/lista/lista-membros.component';
 
 const routes: Routes = [{
   component: LoginLayoutComponent,
@@ -13,11 +15,17 @@ const routes: Routes = [{
     path: ''
   }]
 }, {
-  component:FuncionalidadeLayoutComponent,
+  component: FuncionalidadeLayoutComponent,
   path: '',
-  children:[{
+  children: [{
     component: DashboardComponent,
-    path:'dashboard'
+    path: 'dashboard'
+  }, {
+    component: SubMenuComponent,
+    path: 'submenu'
+  }, {
+    component: ListaMembrosComponent,
+    path: 'lista-membros'
   }]
 }];
 

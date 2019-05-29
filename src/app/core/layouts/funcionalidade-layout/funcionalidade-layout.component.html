@@ -6,11 +6,11 @@
         <h1>Ekklesia</h1>
       </mat-toolbar>
       <mat-nav-list color="primary">
-        <a mat-list-item [routerLink]="['dashboard']">
+        <a mat-list-item routerLink="/dashboard">
           <mat-icon mat-list-icon>dashboard</mat-icon>
           Dashboard
         </a>
-        <a mat-list-item routerLink=".">
+        <a mat-list-item routerLink="/submenu">
           <mat-icon mat-list-icon>view_list</mat-icon>
           Cadastros
         </a>
@@ -80,7 +80,6 @@
           </mat-menu>
         </div>
       </mat-toolbar>
-      <h1 class="mat-h1 titulo-funcionalidade">Dashboard</h1>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
