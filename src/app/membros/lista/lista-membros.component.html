@@ -1,0 +1,68 @@
+<h1 class="mat-h1 titulo-funcionalidade">Membros</h1>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Pesquisar
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <div fxLayout="row">
+          <div fxFlex="50">
+            <mat-form-field fxFlex>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar por">
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex>
+            <table mat-table [dataSource]="membrosDataSource" matSort style="width: 100%;">
+
+              <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+                <td mat-cell *matCellDef="let membro"> {{membro.nome}} </td>
+              </ng-container>
+              <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef> Ações </th>
+                <td mat-cell *matCellDef="let membro">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>info</mat-icon>
+                      <span>Detalhar</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>edit</mat-icon>
+                      <span>Editar</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>delete_forever</mat-icon>
+                      <span>Excluir</span>
+                    </button>
+                  </mat-menu>
+
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+              <tr mat-row *matRowDef="let membro; columns: colunas;">
+              </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex>
+            <button mat-fab matTooltip="Incluir um novo membro" aria-label="Botão que abre o formulário para inclusão de um novo membro">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
